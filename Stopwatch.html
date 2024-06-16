@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>
+      Stopwatch
+    </title>
+
+    <style>
+
+      .time{
+        font-family: arial;
+        font-size: 40px;
+      }
+
+      button{
+        padding: 15px;
+        font-size: 20px;
+        border: none;
+        background-color: lightgray;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+
+
+    </style>
+
+     
+  </head>
+
+  <body>
+
+    <p class="js-time time"></p>
+    <button class="js-start-button">Start</button>
+    <button class="js-reset-button">Reset</button>
+
+    <script>
+
+      
+      const start = document.querySelector('.js-start-button');
+      const reset = document.querySelector('.js-reset-button');
+      const time = document.querySelector('.js-time');
+
+      let seconds = 0;
+      let minutes = 0;
+      let hours = 0;
+      
+      
+
+      let intervalId;
+      start.addEventListener('click', () => {
+        if (start.innerHTML != 'Stop') {
+          start.innerHTML = 'Stop';
+        } else {
+          start.innerHTML = 'Start';
+          clearInterval(intervalId);
+          seconds = 0;
+          minutes = 0;
+          hours = 0;
+          return;
+        };
+
+        intervalId = setInterval(() => {
+          let displaySeconds = seconds < 10 ? '0' + seconds: seconds;
+          let displayMinutes = minutes < 10 ? '0' + minutes: minutes;
+          let displayHours = hours < 10 ? '0' + hours: hours;
+
+        time.innerHTML = `${displayHours}:${displayMinutes}:${displaySeconds}`;
+        seconds += 1;
+        if (seconds === 60) {
+          seconds = 0;
+          minutes += 1;
+        };
+
+        if (minutes === 60) {
+          minutes = 0;
+          hours += 1;
+        };
+        }, 1000);
+      });
+      
+
+      document.querySelector('.js-reset-button').addEventListener('click', () => {
+        clearInterval(intervalId);
+        time.innerHTML = '00:00:00';
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+        start.innerHTML = 'Start';
+      });
+
+    </script>
+
+  </body>
+</html>

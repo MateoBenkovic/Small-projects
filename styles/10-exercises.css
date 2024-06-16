@@ -1,0 +1,43 @@
+.add-button {
+  background-color: rgb(255, 216, 20);
+  border: none;
+  border-radius: 50px;
+  font-family: arial;
+  padding: 5px 20px;
+}
+
+.request-button {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.later-button {
+  background-color: 230, 230, 230;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: arial;
+  padding: 10px 20px;
+}
+
+.white-button {
+  background-color: 230, 230, 230;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: arial;
+  padding: 10px 20px;
+}
+
+.is-toggled {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}

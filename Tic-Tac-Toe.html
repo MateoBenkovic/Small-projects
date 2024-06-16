@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>
+      Tic-Tac-Toe
+    </title>
+
+    <style>
+
+      .grid {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        font-size: 100px;
+      }
+
+      .grid > div {
+        cursor: pointer;
+        text-align: center;
+        height: 100px;
+      }
+
+      .move5 {
+        border: 5px solid black;
+      }
+
+      .move2 {
+        border-left: 5px solid black;
+        border-right: 5px solid black;
+      }
+
+      .move4 {
+        border-top: 5px solid black;
+        border-bottom: 5px solid black;
+      }
+
+      .move6 {
+        border-top: 5px solid black;
+        border-bottom: 5px solid black;
+      }
+
+      .move8 {
+        border-left: 5px solid black;
+        border-right: 5px solid black;
+      }
+
+      .player-move {
+        font-size: 50px;
+      }
+
+      button {
+        border: none;
+        background-color: lightgray;
+        font-size: 25px;
+        padding: 10px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      h1 {
+        margin-bottom: 50px;
+      }
+
+
+    </style>
+
+     
+  </head>
+
+  <body>
+
+    <h1>Tic-Tac-Toe</h1>
+
+    <div class="grid">
+
+      <div class="js-move1 move1"></div>
+      <div class="js-move2 move2"></div>
+      <div class="js-move3 move3"></div>
+      <div class="js-move4 move4"></div>
+      <div class="js-move5 move5"></div>
+      <div class="js-move6 move6"></div>
+      <div class="js-move7 move7"></div>
+      <div class="js-move8 move8"></div>
+      <div class="js-move9 move9"></div>
+
+    </div>
+
+    <p class="js-player-move player-move">X is playing.</p>
+
+    <button class="js-reset-button">Reset</button>
+
+    <script>
+
+      const move1 = document.querySelector('.js-move1');
+      const move2 = document.querySelector('.js-move2');
+      const move3 = document.querySelector('.js-move3');
+      const move4 = document.querySelector('.js-move4');
+      const move5 = document.querySelector('.js-move5');
+      const move6 = document.querySelector('.js-move6');
+      const move7 = document.querySelector('.js-move7');
+      const move8 = document.querySelector('.js-move8');
+      const move9 = document.querySelector('.js-move9');
+      const playerMove = document.querySelector('.js-player-move');
+      const reset = document.querySelector('.js-reset-button');
+
+      let player = 1;
+
+      move1.addEventListener('click', () => {
+        if ((player % 2) != 1) {
+          move1.innerHTML = 'O'
+        } else {
+          move1.innerHTML = 'X';
+        }
+        player++;
+        text();
+        updateScore();
+      });
+
+      move2.addEventListener('click', () => {
+        if ((player % 2) != 1) {
+          move2.innerHTML = 'O'
+        } else {
+          move2.innerHTML = 'X';
+        }
+        player++;
+        text();
+        updateScore();
+      });
+
+      move3.addEventListener('click', () => {
+        if ((player % 2) != 1) {
+          move3.innerHTML = 'O'
+        } else {
+          move3.innerHTML = 'X';
+        }
+        player++;
+        text();
+        updateScore();
+      });
+
+      move4.addEventListener('click', () => {
+        if ((player % 2) != 1) {
+          move4.innerHTML = 'O'
+        } else {
+          move4.innerHTML = 'X';
+        }
+        player++;
+        text();
+        updateScore();
+      });
+
+      move5.addEventListener('click', () => {
+        if ((player % 2) != 1) {
+          move5.innerHTML = 'O'
+        } else {
+          move5.innerHTML = 'X';
+        }
+        player++;
+        text();
+        updateScore();
+      });
+
+      move6.addEventListener('click', () => {
+        if ((player % 2) != 1) {
+          move6.innerHTML = 'O'
+        } else {
+          move6.innerHTML = 'X';
+        }
+        player++;
+        text();
+        updateScore();
+      });
+
+      move7.addEventListener('click', () => {
+        if ((player % 2) != 1) {
+          move7.innerHTML = 'O'
+        } else {
+          move7.innerHTML = 'X';
+        }
+        player++;
+        text();
+        updateScore();
+      });
+
+      move8.addEventListener('click', () => {
+        if ((player % 2) != 1) {
+          move8.innerHTML = 'O'
+        } else {
+          move8.innerHTML = 'X';
+        }
+        player++;
+        text();
+        updateScore();
+      });
+
+      move9.addEventListener('click', () => {
+        if ((player % 2) != 1) {
+          move9.innerHTML = 'O'
+        } else {
+          move9.innerHTML = 'X';
+        }
+        player++;
+        text();
+        updateScore();
+      });
+
+      function text() {
+        if ((player % 2) === 0) {
+        playerMove.innerHTML = 'O is playing.';
+      } else if ((player % 2) === 1) {
+        playerMove.innerHTML = 'X is playing.';
+      }
+      }; 
+      
+      reset.addEventListener('click', () => {
+      move1.innerHTML = '';
+      move2.innerHTML = '';
+      move3.innerHTML = '';
+      move4.innerHTML = '';
+      move5.innerHTML = '';
+      move6.innerHTML = '';
+      move7.innerHTML = '';
+      move8.innerHTML = '';
+      move9.innerHTML = '';
+      player = 1;
+      playerMove.innerHTML = 'X is playing.'
+      });
+
+      function updateScore() {
+        if (move1.innerHTML === 'X' && move2.innerHTML === 'X' && move3.innerHTML === 'X') {
+        playerMove.innerHTML = 'X won!';
+      } else if (move1.innerHTML === 'O' && move2.innerHTML === 'O' && move3.innerHTML === 'O') {
+        playerMove.innerHTML = 'O won!';
+      } else if (move4.innerHTML === 'X' && move5.innerHTML === 'X' && move6.innerHTML === 'X') {
+        playerMove.innerHTML = 'X won!';
+      } else if (move4.innerHTML === 'O' && move5.innerHTML === 'O' && move6.innerHTML === 'O') {
+        playerMove.innerHTML = 'O won!';
+      } else if (move7.innerHTML === 'X' && move8.innerHTML === 'X' && move9.innerHTML === 'X') {
+        playerMove.innerHTML = 'X won!';
+      } else if (move7.innerHTML === 'O' && move8.innerHTML === 'O' && move9.innerHTML === 'O') {
+        playerMove.innerHTML = 'O won!';
+      } else if (move1.innerHTML === 'X' && move4.innerHTML === 'X' && move7.innerHTML === 'X') {
+        playerMove.innerHTML = 'X won!';
+      } else if (move1.innerHTML === 'O' && move4.innerHTML === 'O' && move7.innerHTML === 'O') {
+        playerMove.innerHTML = 'O won!';
+      } else if (move2.innerHTML === 'X' && move5.innerHTML === 'X' && move8.innerHTML === 'X') {
+        playerMove.innerHTML = 'X won!';
+      } else if (move2.innerHTML === 'O' && move5.innerHTML === 'O' && move8.innerHTML === 'O') {
+        playerMove.innerHTML = 'O won!';
+      } else if (move3.innerHTML === 'X' && move6.innerHTML === 'X' && move9.innerHTML === 'X') {
+        playerMove.innerHTML = 'X won!';
+      } else if (move3.innerHTML === 'O' && move6.innerHTML === 'O' && move9.innerHTML === 'O') {
+        playerMove.innerHTML = 'O won!';
+      } else if (move1.innerHTML === 'X' && move5.innerHTML === 'X' && move9.innerHTML === 'X') {
+        playerMove.innerHTML = 'X won!';
+      } else if (move1.innerHTML === 'O' && move5.innerHTML === 'O' && move9.innerHTML === 'O') {
+        playerMove.innerHTML = 'O won!';
+      } else if (move3.innerHTML === 'X' && move5.innerHTML === 'X' && move7.innerHTML === 'X') {
+        playerMove.innerHTML = 'X won!';
+      } else if (move3.innerHTML === 'O' && move5.innerHTML === 'O' && move7.innerHTML === 'O') {
+        playerMove.innerHTML = 'O won!';
+      }
+    }
+
+
+
+    </script>
+
+  </body>
+</html>

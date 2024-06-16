@@ -1,0 +1,42 @@
+.textbox {
+  height: 25px;
+  font-size: 15px;
+}
+
+.date {
+  height: 25px;
+}
+
+.addToList {
+  font-weight: bold;
+  font-family: arial;
+  font-size: 15px;
+  color: white;
+  background-color: green;
+  border: none;
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.todo-grid,
+.todo-input-grid {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  margin: 10px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.delete-button {
+  font-weight: bold;
+  font-family: arial;
+  font-size: 15px;
+  color: white;
+  background-color: darkred;
+  border: none;
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+}
